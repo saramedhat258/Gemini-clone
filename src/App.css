@@ -14,6 +14,9 @@
 .sidebar-icon {
     width: 20px;
 }
+.recent-msg{
+    width: 100%;
+}
 
 .newchat {
     margin-top: 2.5rem;
@@ -41,11 +44,18 @@
 }
 
 .extentedmenu {
-    width: 20%;
+    width: 18%;
+}
+.chat{
+    width: 82%;
 }
 
 .usericon {
     width: 40px;
+}
+.usermsg{
+    color: rgb(25, 25, 139);
+    font-size: 18px;
 }
 
 .navbar p {

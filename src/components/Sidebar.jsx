@@ -3,11 +3,7 @@ import { assets } from '../assets/assets'
 import { Context } from '../context/Context'
 function Sidebar() {
     const [Extended, setExtended] = useState(false)
-    const { prevPrompts, setRecentPrompt, onsent, newchat } = useContext(Context)
-    const loadprompt=async (prompt)=>{
-        setRecentPrompt(prompt)
-        await onsent(prompt)
-    }
+    const {newchat,LoadConversation,Conversations} = useContext(Context)
     return (
         <>
             <div className={`sidebar ${Extended ? 'extentedmenu' : 'notextended'} justify-content-between flex-column`}>
@@ -20,19 +16,20 @@ function Sidebar() {
                         {Extended ? <p className='pt-3'>New Chat</p> : null}
                     </div>
                     {Extended ?
-                        <div className='recent-box mt-3'>
+                        <div className='recent-box w-75 d-flex flex-shrink-0 flex-grow-0 flex-column mt-3'>
                             <p className='ms-3 mt-5'>Recent</p>
                             {
-                                prevPrompts.map((item,index) => {
-                                    return (
-                                        <div onClick={()=>loadprompt(item)} key={index} className="recent-msg d-flex gap-2 w-70 align-items-center ms-3 rounded-pill px-3">
+                                Conversations.map((conv) =>
+                                    (
+                                        <div onClick={()=>LoadConversation(conv.id)} key={conv.id} className="recent-msg flex-shrink-0 flex-grow-0 d-flex gap-2 align-items-center ms-3 rounded-pill px-3">
                                             <img src={assets.message_icon} className='sidebar-icon' alt="" />
-                                            <p className='pt-2'>{item.slice(0,18)}...</p>
+                                            {
+                                                    <p className='pt-2'>{conv.name}...</p>
+                                            }
                                         </div>
                                     )
-                                })
+                                )
                             }
-
                         </div>
                         : null
                     }

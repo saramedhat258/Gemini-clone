@@ -19,11 +19,15 @@ const generationConfig = {
     responseMimeType: "text/plain",
 };
 
-async function run(prompt) {
+async function run(prompt,history = []) {
+    const formattedHistory = Array.isArray(history) ? history : [];
+
     const chatSession = model.startChat({
         generationConfig,
-        history: [
-        ],
+        history: formattedHistory.map(msg => ({
+            role: msg.role === "user" ? "user" : "model", // Ensure role is either "user" or "model"
+            parts: [{ text: msg.content }], // Wrap content in "parts"
+        })),
     });
 
     const result = await chatSession.sendMessage(prompt);
