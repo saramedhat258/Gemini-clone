@@ -1,4 +1,5 @@
-# Gemini Clone [video](https://drive.google.com/file/d/1iQ9QfcINbKxPokI9mnxEJu1ZmnB7Io8B/view?usp=sharing)
+# Gemini Clone 
+[video](https://drive.google.com/file/d/1iQ9QfcINbKxPokI9mnxEJu1ZmnB7Io8B/view?usp=sharing)
 
 ## ⚠️ Note about API Quota
 This project was fully functional and tested successfully with the **Gemini API**.  
