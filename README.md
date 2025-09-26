@@ -12,7 +12,7 @@ However, the free quota for the API has been exceeded, so the live demo is not c
 ✅The application remembers previous conversations and generates responses based on that history. 
 ✅Each conversation is kept separate, ensuring that the history of one chat does not interfere with others.
 
-Technologies I used: 
+# Technologies I used: 
 HTML, CSS, Bootstrap, and ReactJS.
 
 
